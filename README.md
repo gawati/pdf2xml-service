@@ -2,7 +2,7 @@
 # install python
 # install pip
 # install flask (pip install flask)
-# install pdfminer.six (pip install pdfminer.six)
+# install lc_pdfminer (https://github.com/gawati/pdf-to-xml)
 
 # run 
 # python app.py

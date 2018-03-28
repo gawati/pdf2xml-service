@@ -10,10 +10,11 @@ from werkzeug import secure_filename
 import os
 import io
 
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.converter import TextConverter
-from pdfminer.layout import LAParams
-from pdfminer.pdfpage import PDFPage
+from pdfminer.lc_pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.lc_converter import LegalXMLConverter
+from pdfminer.lc_layout import LAParams
+from pdfminer.lc_pdfpage import PDFPage
+from pdfminer.lc_image import ImageWriter
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -82,7 +83,7 @@ def upldfile():
             retstr = io.BytesIO()
             codec = 'utf-8'
             laparams = LAParams()
-            device = TextConverter(rsrcmgr, retstr, codec=codec, laparams=laparams)
+            device = LegalXMLConverter(rsrcmgr, retstr, codec=codec, laparams=laparams)
             interpreter = PDFPageInterpreter(rsrcmgr, device)
             password = ""
             maxpages = 0
@@ -92,11 +93,13 @@ def upldfile():
                                   password=password,
                                   caching=caching,
                                   check_extractable=True):
+                page.rotate = (page.rotate+rotation) % 360
                 interpreter.process_page(page)
 
             text = retstr.getvalue()
             device.close()
             retstr.close()
+            print text
             return jsonify(text=text)
 
 
