@@ -99,7 +99,6 @@ def upldfile():
             text = retstr.getvalue()
             device.close()
             retstr.close()
-            print text
             return jsonify(text=text)
 
 
