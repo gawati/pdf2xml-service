@@ -1,0 +1,47 @@
+[2018-03-28 03:55:30] INFO     FileName: pitch_deck.pdf
+[2018-03-28 04:06:42] ERROR    Exception on /uploadajax [POST]
+Traceback (most recent call last):
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 86, in upldfile
+    retstr = io.StringIO()
+NameError: global name 'io' is not defined
+[2018-03-28 04:08:48] ERROR    Exception on /uploadajax [POST]
+Traceback (most recent call last):
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/suraj/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 100, in upldfile
+    interpreter.process_page(page)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/pdfinterp.py", line 853, in process_page
+    self.device.end_page(page)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 56, in end_page
+    self.receive_layout(self.cur_item)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 212, in receive_layout
+    render(ltpage)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 202, in render
+    render(child)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 202, in render
+    render(child)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 202, in render
+    render(child)
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 204, in render
+    self.write_text(item.get_text())
+  File "/home/suraj/.local/lib/python2.7/site-packages/pdfminer/converter.py", line 195, in write_text
+    self.outfp.write(text)
+TypeError: unicode argument expected, got 'str'
