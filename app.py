@@ -93,11 +93,11 @@ def upldfile():
                                   password=password,
                                   caching=caching,
                                   check_extractable=True):
-                page.rotate = (page.rotate+rotation) % 360
+                page.rotate = (page.rotate+0) % 360
                 interpreter.process_page(page)
 
-            text = retstr.getvalue()
             device.close()
+            text = retstr.getvalue()
             retstr.close()
             return jsonify(text=text)
 
