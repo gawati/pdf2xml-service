@@ -1,5 +1,4 @@
 from flask import (
-    Flask,
     request,
     render_template,
     send_from_directory,
@@ -9,7 +8,7 @@ from flask import (
 from werkzeug import secure_filename
 import os
 import io
-
+from pdf2xml import app
 from pdfminer.lc_pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.lc_converter import LegalXMLConverter
 from pdfminer.lc_layout import LAParams
@@ -18,8 +17,6 @@ from pdfminer.lc_image import ImageWriter
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-
-app = Flask(__name__)
 
 from logging import Formatter, FileHandler
 handler = FileHandler(os.path.join(basedir, 'log.txt'), encoding='utf8')
