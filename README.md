@@ -22,7 +22,7 @@ $ export FLASK_ENV=development
 ```
 
 ## Build & Distribution
-Version is maintained in `tagit/setup.py`.  
+Version is maintained in `setup.py`.  
 `python setup.py sdist` will create a development package with “.dev” and the current date appended.  
 `python setup.py release sdist` will create a release package with only the version.  
 To learn more about the deploy process referenced, read [this](http://flask.pocoo.org/docs/1.0/patterns/distribute/)
